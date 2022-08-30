@@ -1,0 +1,122 @@
+
+
+
+SampTargN - Enhancements - Documentation
+========================================
+
+SampTargN - Version 1.1,  14/06/2005
+requires SARM.DLL V1.26 or newer !
+
+
+How to interprete the memory content (ARM vs. Thumb):
+=====================================================
+In order to disassembly the memory correctly, the type of
+memory content must be known.  In AGDI, this is done by
+using attribute bits.  These are set by the SARM dll after
+an application has been loaded as follows:
+
+   AG_ATR_THUMB  := content denots a Thumb (16-Bit) instruction
+   AG_ATR_ARM    := content denots an Arm (32-Bit) instruction
+
+If the attribute for a given address does not specify AG_ATR_THUMB
+or AG_ATR_ARM, then it is not an instruction which means 'AG_ATR_NOINST'.
+In this case it as some 32-bit constant or value.
+
+AGDI.Cpp contains the function -
+
+  int GetInstMode (UL32 nAdr);
+  
+to obtain the type of memory.
+
+
+Mapping an address to a Scope-Block
+===================================
+It is sometimes required to map an address to a scope-block, that is,
+some function in some module and get the name of the corresponding
+source file and the line numbers.
+
+AGDI.cpp contains the function TestScope(), it shows the example
+code on how to do this.  If some address is successfully mapped to
+a function block, then the following results are provided:
+
+Call:
+  static AG_SCOPE   ac;
+  nE = pCbFunc (AG_CB_GETSCOPEINFO, (void *) &ac);    // send data to uVision
+
+Results:
+  Module;         // name of Module
+  Func;           // name of Function
+  lowPC;          // Scope-Block lower bound
+  higPC;          // Scope-Block upper bound
+  nLines;         // number of lines
+  curLine;        // current line (or 0 if none)
+  pLines;         // Line-Number Array
+  szPath[512];    // full path name of source file
+
+Take a look into AGDI.Cpp (TestScope()) and AGDI.H (AG_SCOPE structure)
+for details.
+
+
+Enumerating all Modules and Functions of a loaded User-Application
+==================================================================
+The module and function blocks of a loaded user-application can be
+enumerated as follows:
+
+static AG_BLOCK  ab;
+
+static void TestEnumScopes (void)  {
+  UL32     nE;
+  char    szB[512];
+
+  memset (&ab, 0, sizeof (ab));             // clear -->  ***REQUIRED!!!***
+  nE = pCbFunc (AG_CB_ENUMFUNCTIONS, (void *) &ab);    // initialize for enumeration
+  if (nE == 0)  {                                      // failed...
+    return;
+  }
+  while (1)  {                              // while more enumerations...
+    nE = pCbFunc (AG_CB_ENUMFUNCTIONS, (void *) &ab);    // send data to uVision
+    if (nE == 0) break;                     // Enumeration finished.
+    sprintf (szB, "AGDI: \\\\%s\\%s\\%s(): lowPC=0x%08X, higPC=0x%08X\n",
+                    ab.pApp, ab.pModule, ab.pFunc, ab.lowPC, ab.higPC);
+    txtout (szB);                           // write result into command-output-Window.
+  }
+}
+
+Take a look into AGDI.Cpp (TestEnumScopes()) and AGDI.H (AG_BLOCK structure)
+for details.
+
+
+Adding one or more Menus and Accelerators to uVision
+====================================================
+A menu consisting of one or more items and sub items can be
+attached to uVisions menu bar.
+
+For menues, this requires the following steps:
+
+  a) Edit the menu resource
+  b) On call of AG_UvGetMenu(), return the menu resource
+  c) write a menu item handler (AG_UvOnCallMenuItem())
+  d) write a menu item update handler (AG_UvOnUpdateMenuItem()) when
+     menu items must be dynamically checked or unchecked.
+
+For the accelerators, edit the Accelerator resource and return
+the loaded resource in AG_UvGetAccelerators().  An example is
+shown in SampTargGui.Cpp (AG_UvGetAccelerators()).
+
+A working example with the before mentioned functions can be
+found in SampTargGui.Cpp.
+
+
+Adding modal and modeless dialogs to uVision
+============================================
+Model and modeless dialogs can be added to uVision.  This involves
+editing the dialog resources and writing the dialog command handlers.
+
+SampTargGui.Cpp contains the templates and basic functions to handle
+dialogs.  The menu item handler AG_UvOnCallMenuItem() has a few entries
+where a modeless and modal dialog can be started.
+
+
+*** Unklar, welche Art von Views (ausser CFormView und CEditView) moeglich sind.
+
+

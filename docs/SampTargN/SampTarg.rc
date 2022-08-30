@@ -1,0 +1,341 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// German (Germany) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MODAL DIALOG DISCARDABLE  0, 0, 186, 90
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "This is a modal dialog box.",IDC_STATIC,7,7,100,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MODAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_TEST ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_F8,          ID_TEST_EDIT,           VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_TEST                ICON    DISCARDABLE     "idr_test.ico"
+#endif    // German (Germany) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TSETUP DIALOG DISCARDABLE  0, 0, 266, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Target Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,82,72,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,135,72,50,14
+    COMBOBOX        IDC_COMPORT,55,23,66,85,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_BAUDRATE,55,38,66,95,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "&Ignore Code Modifications",IDC_IGNCODE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_GROUP | WS_TABSTOP,147,34,100,10
+    CONTROL         "&Cache Memory",IDC_CACHEMEM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,147,19,100,10
+    CONTROL         "Cache SFR Space",IDC_CACHESFR,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,147,50,100,10
+    RTEXT           "&Port:",IDC_STATIC,26,25,25,8
+    RTEXT           "&Baudrate:",IDC_STATIC,16,40,35,8
+    GROUPBOX        "Comm Port Settings",IDC_STATIC,10,5,122,60
+    GROUPBOX        "Cache Options",IDC_STATIC,135,5,122,60
+END
+
+IDD_MODELESS DIALOG DISCARDABLE  0, 0, 187, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Modeless Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "A dummy modeless dialog with no functions !",IDC_STATIC,
+                    15,44,156,8
+END
+
+IDD_FORM DIALOG DISCARDABLE  0, 0, 366, 201
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CTEXT           "A view with a fix size",IDC_STATIC,93,92,162,16
+    GROUPBOX        "Static",IDC_STATIC,7,7,352,187
+    CTEXT           "This View can be opened only once.\nWhile opened, the related menu item is checked but disabled.",
+                    IDC_STATIC,63,113,240,68
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TSETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_MODELESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SampTarg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,0,1
+ PRODUCTVERSION 1,1,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "KEIL\0"
+            VALUE "FileDescription", "Sample Target DLL\0"
+            VALUE "FileVersion", "1.10\0"
+            VALUE "InternalName", "SampTarg\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SampTarg.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SampleTarget Driver Dynamic Link Library\0"
+            VALUE "ProductVersion", "1.10\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_TEST MENU DISCARDABLE 
+BEGIN
+    POPUP "Debug"
+    BEGIN
+        MENUITEM "&Breakpoints...",             32002
+    END
+    POPUP "Extension A"
+    BEGIN
+        MENUITEM "Click me to check",           ID_TEST_CHECK
+        MENUITEM "Click me to uncheck",         ID_TEST_UNCHECK
+    END
+    POPUP "Extension B"
+    BEGIN
+        MENUITEM "New Edit View",               ID_TEST_EDIT
+        MENUITEM "New Form View",               ID_TEST_FORM_1
+        MENUITEM "Message Box",                 ID_TEST_MESSAGEBOX
+        MENUITEM "Modal Dialog",                ID_TEST_MODAL
+        MENUITEM "Modeless Dialog",             ID_TEST_MODELESS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TEST_MESSAGEBOX      "Displays a message box."
+    ID_TEST_MODAL           "Displays a modal dialog box"
+    ID_TEST_MODELESS        "Displays a modeless dialog box."
+    ID_TEST_CHECK           "xxx"
+    ID_TEST_UNCHECK         "xxx"
+    ID_TEST_VIEW            "Open a new MDI Child"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_TEST_EDIT            "Open a new Edit View"
+    ID_TEST_FORM            "Open a new Form View"
+    ID_TEST_FORM_1          "Open a new Form View"
+    ID_TEST_FORM_2          "Open a new Form View"
+    ID_DEBUG_BREAKPOINTS    "Overload of the breakpoint dialog by external DLL\nOverload of the breakpoint dialog by external DLL"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    32002                   "Breakpoints command overloaded by external DLL"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SampTarg.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
